@@ -2,6 +2,8 @@
 *.iml
 *.iws
 *.ipr
-.idea
-target
+.idea/
+target/
 .java-version
+build/
+.gradle/

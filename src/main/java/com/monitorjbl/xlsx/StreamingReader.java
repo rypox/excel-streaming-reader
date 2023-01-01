@@ -17,6 +17,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.util.StaxHelper;
 import org.apache.poi.xssf.eventusermodel.XSSFReader;
+import org.apache.poi.xssf.model.SharedStrings;
 import org.apache.poi.xssf.model.SharedStringsTable;
 import org.apache.poi.xssf.model.StylesTable;
 import org.slf4j.Logger;
@@ -215,7 +216,7 @@ public class StreamingReader implements Iterable<Row>, AutoCloseable {
     }
 
     /**
-     * <h1>!!! This option is experimental !!!</h1>
+     * <big>!!! This option is experimental !!!</big>
      *
      * Set the size of the Shared Strings Table cache. This option exists to accommodate
      * extremely large workbooks with millions of unique strings. Normally the SST is entirely
@@ -325,7 +326,7 @@ public class StreamingReader implements Iterable<Row>, AutoCloseable {
         boolean use1904Dates = false;
         XSSFReader reader = new XSSFReader(pkg);
 
-        SharedStringsTable sst;
+        SharedStrings sst;
         File sstCache = null;
         if(sstCacheSizeBytes > 0) {
           sstCache = Files.createTempFile("", "").toFile();
